@@ -1,11 +1,12 @@
 <script>
   import { Header, Wrapper } from './components';
+  import Form from './components/Form.svelte';
   const date = new Date().toDateString();
 </script>
 
 <main>
   <Header name="Svelte" {date} />
-  <Wrapper>I fit in a slot</Wrapper>
+  <Wrapper><Form /></Wrapper>
 </main>
 
 <style>
