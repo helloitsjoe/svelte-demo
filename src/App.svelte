@@ -1,12 +1,12 @@
 <script>
-  import { Header, Wrapper } from './components';
+  import { Header, Wrapper, Count } from './components';
   import Form from './components/Form.svelte';
-  const date = new Date().toDateString();
+  export let date;
 </script>
 
 <main>
   <Header name="Svelte" {date} />
-  <Wrapper><Form /></Wrapper>
+  <Wrapper><Form /><Count /></Wrapper>
 </main>
 
 <style>

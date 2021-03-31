@@ -4,7 +4,7 @@
 </script>
 
 <h1>Hello {name}!</h1>
-<p>{date}</p>
+<p>Today is {date.toLocaleDateString()}</p>
 
 <style>
   h1 {
