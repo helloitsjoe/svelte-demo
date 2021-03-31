@@ -6,7 +6,10 @@
 
 <main>
   <Header name="Svelte" {date} />
-  <Wrapper><Form /><Count /></Wrapper>
+  <Wrapper>
+    <Form />
+    <Count />
+  </Wrapper>
 </main>
 
 <style>
