@@ -1,5 +1,5 @@
 <script>
-  import { Header, Wrapper, Count } from './components';
+  import { Header, Wrapper, Count, List } from './components';
   import Form from './components/Form.svelte';
   export let date;
 </script>
@@ -9,6 +9,7 @@
   <Wrapper>
     <Form />
     <Count />
+    <List />
   </Wrapper>
 </main>
 

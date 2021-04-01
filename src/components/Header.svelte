@@ -13,6 +13,7 @@
 {:else}
   <p>Today is **/**/****</p>
 {/if}
+
 <button on:click={toggleDate}>
   {showDate ? 'Hide' : 'Show'} date
 </button>
