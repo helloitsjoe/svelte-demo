@@ -12,7 +12,7 @@
   <Header name="Svelte" />
   <Router {basepath}>
     <nav>
-      <a use:link href="/">Home</a>
+      <a use:link href={basepath || '/'}>Home</a>
       <a use:link href={`${basepath}/date`}>Dates</a>
       <a use:link href={`${basepath}/form`}>Form</a>
       <a use:link href={`${basepath}/count`}>Count</a>
