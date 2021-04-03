@@ -25,3 +25,9 @@
   <button on:click={removeFirst}>Remove first language</button>
   <button on:click={reset}>Reset</button>
 </ul>
+
+<style>
+  ul {
+    text-decoration: none;
+  }
+</style>
