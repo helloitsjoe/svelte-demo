@@ -5,7 +5,7 @@
   export let today;
   export let isDev;
 
-  const basepath = isDev ? '/' : '/svelte-demo';
+  const basepath = isDev ? '' : '/svelte-demo';
 </script>
 
 <main>
@@ -13,16 +13,16 @@
   <Router {basepath}>
     <nav>
       <a use:link href="/">Home</a>
-      <a use:link href="/date">Dates</a>
-      <a use:link href="/form">Form</a>
-      <a use:link href="/count">Count</a>
-      <a use:link href="/list">List</a>
+      <a use:link href={`${basepath}/date`}>Dates</a>
+      <a use:link href={`${basepath}/form`}>Form</a>
+      <a use:link href={`${basepath}/count`}>Count</a>
+      <a use:link href={`${basepath}/list`}>List</a>
     </nav>
     <Wrapper>
-      <Route path="/date"><Dates {today} /></Route>
-      <Route path="/form"><Form /></Route>
-      <Route path="/count"><Count /></Route>
-      <Route path="/list"><List /></Route>
+      <Route path="date"><Dates {today} /></Route>
+      <Route path="form"><Form /></Route>
+      <Route path="count"><Count /></Route>
+      <Route path="list"><List /></Route>
     </Wrapper>
   </Router>
 </main>
