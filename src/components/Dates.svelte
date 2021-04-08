@@ -1,5 +1,9 @@
 <script>
+  import { Button } from '.';
+
+  // Just an example of props
   export let today;
+
   let showDate = true;
   const toggleDate = () => {
     showDate = !showDate;
@@ -12,6 +16,6 @@
   <p>Today is **/**/****</p>
 {/if}
 
-<button on:click={toggleDate}>
+<Button on:click={toggleDate}>
   {showDate ? 'Hide' : 'Show'} date
-</button>
+</Button>

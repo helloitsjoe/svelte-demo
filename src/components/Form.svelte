@@ -18,4 +18,5 @@
     <input type="checkbox" bind:checked={extra} />
   </label>
   <button type="submit">Submit</button>
+  <h2>Your name is {name}</h2>
 </form>

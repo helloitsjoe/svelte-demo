@@ -1,22 +1,24 @@
 <script>
-  import { Router, link, Route } from 'svelte-routing';
+  import { Router, Link, Route } from 'svelte-routing';
   import { Header, Wrapper, Dates, Count, List, Form } from './components';
 
   export let today;
   export let isDev;
 
-  const basepath = isDev ? '' : '/svelte-demo';
+  const basepath = isDev ? '/' : '/svelte-demo';
+  // TODO: nested on:click
+  // TODO: dispatch
 </script>
 
 <main>
   <Header name="Svelte" />
   <Router {basepath}>
     <nav>
-      <a use:link href={basepath || '/'}>Home</a>
-      <a use:link href={`${basepath}/date`}>Dates</a>
-      <a use:link href={`${basepath}/form`}>Form</a>
-      <a use:link href={`${basepath}/count`}>Count</a>
-      <a use:link href={`${basepath}/list`}>List</a>
+      <Link to="/">Home</Link>
+      <Link to="date">Dates</Link>
+      <Link to="form">Form</Link>
+      <Link to="list">List</Link>
+      <Link to="count">Count</Link>
     </nav>
     <Wrapper>
       <Route path="date"><Dates {today} /></Route>
@@ -31,7 +33,6 @@
   main {
     text-align: center;
     padding: 1em;
-    max-width: 240px;
     margin: 0 auto;
   }
 
@@ -42,11 +43,12 @@
     margin: auto;
   }
 
-  nav > a {
+  :global(nav a) {
     flex: 1;
+    min-width: 72px;
   }
 
-  nav * + * {
+  :global(nav * + *) {
     border-left: 1px solid lightgray;
   }
 
