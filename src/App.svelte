@@ -6,7 +6,6 @@
   export let isDev;
 
   const basepath = isDev ? '/' : '/svelte-demo';
-  // TODO: nested on:click
   // TODO: dispatch
 </script>
 
@@ -41,6 +40,7 @@
     justify-content: space-between;
     max-width: 600px;
     margin: auto;
+    flex-wrap: wrap;
   }
 
   :global(nav a) {

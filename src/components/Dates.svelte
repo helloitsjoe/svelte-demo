@@ -1,5 +1,5 @@
 <script>
-  import { Button } from '.';
+  import Button from './Button.svelte';
 
   // Just an example of props
   export let today;
