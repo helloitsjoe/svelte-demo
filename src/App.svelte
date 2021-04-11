@@ -1,6 +1,14 @@
 <script>
   import { Router, Link, Route } from 'svelte-routing';
-  import { Header, Wrapper, Dates, Count, List, Form } from './components';
+  import {
+    Header,
+    Wrapper,
+    Dates,
+    Count,
+    List,
+    Form,
+    Photos,
+  } from './components';
 
   export let today;
   export let isDev;
@@ -18,12 +26,14 @@
       <Link to="form">Form</Link>
       <Link to="list">List</Link>
       <Link to="count">Count</Link>
+      <Link to="photos">Photos</Link>
     </nav>
     <Wrapper>
       <Route path="date"><Dates {today} /></Route>
       <Route path="form"><Form /></Route>
       <Route path="count"><Count /></Route>
       <Route path="list"><List /></Route>
+      <Route path="photos"><Photos /></Route>
     </Wrapper>
   </Router>
 </main>
