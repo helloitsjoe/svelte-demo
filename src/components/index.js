@@ -5,5 +5,6 @@ import Button from './Button.svelte';
 import Dates from './Dates.svelte';
 import Form from './Form.svelte';
 import List from './List.svelte';
+import Photos from './Photos.svelte';
 
-export { Header, Wrapper, Count, List, Dates, Form, Button };
+export { Header, Wrapper, Count, List, Dates, Form, Button, Photos };
