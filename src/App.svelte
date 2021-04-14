@@ -1,14 +1,13 @@
 <script>
-  import { Router, Link, Route } from 'svelte-routing';
-  import {
-    Header,
-    Wrapper,
-    Dates,
-    Count,
-    List,
-    Form,
-    Photos,
-  } from './components';
+  import { Router, Link, Route } from 'svelte-navigator';
+  import { Header, Wrapper, Lazy } from './components';
+
+  // Lazy load routes
+  const Dates = () => import('./components/Dates.svelte');
+  const Count = () => import('./components/Count.svelte');
+  const List = () => import('./components/List.svelte');
+  const Form = () => import('./components/Form.svelte');
+  const Photos = () => import('./components/Photos.svelte');
 
   export let today;
   export let isDev;
@@ -18,22 +17,29 @@
 </script>
 
 <main>
-  <Header name="Svelte" />
   <Router {basepath}>
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="date">Dates</Link>
-      <Link to="form">Form</Link>
-      <Link to="list">List</Link>
-      <Link to="count">Count</Link>
-      <Link to="photos">Photos</Link>
-    </nav>
+    <Header name="Svelte">
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="date">Dates</Link>
+        <Link to="form">Form</Link>
+        <Link to="list">List</Link>
+        <Link to="count">Count</Link>
+        <Link to="photos">Photos</Link>
+      </nav>
+    </Header>
     <Wrapper>
-      <Route path="date"><Dates {today} /></Route>
-      <Route path="form"><Form /></Route>
-      <Route path="count"><Count /></Route>
-      <Route path="list"><List /></Route>
-      <Route path="photos"><Photos /></Route>
+      <Route path="date"
+        ><Lazy
+          component={Dates}
+          fallback="<h2>Loading dates...</h2>"
+          {today}
+        /></Route
+      >
+      <Route path="form"><Lazy component={Form} /></Route>
+      <Route path="count"><Lazy component={Count} /></Route>
+      <Route path="list"><Lazy component={List} /></Route>
+      <Route path="photos"><Lazy component={Photos} /></Route>
     </Wrapper>
   </Router>
 </main>

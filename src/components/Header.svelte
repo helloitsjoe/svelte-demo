@@ -3,6 +3,7 @@
 </script>
 
 <h1>Hello {name}!</h1>
+<slot />
 
 <style>
   h1 {
