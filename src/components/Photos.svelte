@@ -17,7 +17,7 @@
       <p>{photo.title}</p>
     </div>
   {:else}
-    Loading...
+    <h2>Loading...</h2>
   {/each}
 </div>
 
@@ -34,5 +34,9 @@
 
   p {
     font-weight: normal;
+  }
+
+  h2 {
+    margin: auto;
   }
 </style>

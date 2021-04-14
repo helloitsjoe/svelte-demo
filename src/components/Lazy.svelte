@@ -1,17 +1,19 @@
 <script>
   import { onMount } from 'svelte';
 
-  let Component;
-
   const { component, fallback, ...props } = $$props;
 
+  let Component;
+
+  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
   onMount(() => {
-    component().then(mod => {
-      // Artificial timeout to show lazy loading
-      setTimeout(() => {
+    // Artificial timeout to show lazy loading
+    sleep(300)
+      .then(() => component())
+      .then(mod => {
         Component = mod.default;
-      }, 1000);
-    });
+      });
   });
 </script>
 
