@@ -13,7 +13,6 @@
   export let isDev;
 
   const basepath = isDev ? '/' : '/svelte-demo';
-  // TODO: dispatch
 </script>
 
 <main>
