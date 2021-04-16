@@ -19,7 +19,6 @@
   }
 
   span {
-    /* align-self: flex-start; */
     flex: 0;
   }
 
